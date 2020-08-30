@@ -9,16 +9,20 @@
 
 {% block header_section %}
 
-    <div>Time Left: --:--</div><a href="{% url 'quiz_question' %}">Start Quiz</a>
+    <div class="nav">Time Left: --:--</div>
+    <div class="nav" id="tag" ><a href="{% url 'quiz_question' %}">Start Quiz</a></div>
 
 {% endblock %}
 
 {% block main_section %}
 
     <h3>Carefully read the instructions before you proceed</h3>
-    <p>Read the passage and select the most appropriate option, you have {{ config.time_minute }} 
-        minute(s) and {{ config.time_second }} second(s). Note: Do not move your mouse out of the window 
-        as your test will be automatically submitted.</p>
+    <p>
+        Read the passage and select the most appropriate option. You have {{ config.time_minute }} 
+        minute(s) and {{ config.time_second }} second(s), the quiz is submitted automatically when time is up.. 
+        <!-- Note: Do not move your mouse out of the window 
+        as your test will be automatically submitted. -->
+    </p>
     <a href="{% url 'quiz_question' %}"><button>Start Quiz</button></a>
 
 {% endblock %}

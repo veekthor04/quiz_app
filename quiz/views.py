@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Question, Passage, SiteConfiguration
 
 # Create your views here.
@@ -48,14 +48,10 @@ def quiz_result(request):
         score = correct_count / question_count * 100
 
         context ={
-            'score': score
+            'score': score,
+            'config': config
         }  
 
         return render(request, "quiz/result.html", context)
 
-    context ={
-        'score': score,
-        'config': config
-    }
-
-    return render(request, "quiz/start.html", context)
+    return redirect(quiz_start)

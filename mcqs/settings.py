@@ -25,7 +25,7 @@ SECRET_KEY = 'bd$tyqt1t^&tfdnt=1j0#1@(t4t-0^s_j2^$&ww#dgpcc(1$!='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'veekmcqs.herokuapp.com']
 
 MEDIA_URL = '/media/'
 
@@ -121,5 +121,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_URL = '/static/'

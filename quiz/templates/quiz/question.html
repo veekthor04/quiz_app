@@ -9,8 +9,8 @@
 
 {% block header_section %}
 
-    <div>Time Left: <span id="time">--:--</span></div>
-    <a href="#" type="submit" onclick="document.getElementById('quiz').submit();">Submit</a>
+    <div class="nav">Time Left: <span id="time">--:--</span></div>
+    <div class="nav" id="tag" ><a href="#" type="submit" onclick="document.getElementById('quiz').submit();">Submit</a></div>
 
 {% endblock %}
 
@@ -18,7 +18,7 @@
 
     {% for passage in passages %}
 
-        <p>{{ passage.passage_text }}</p>
+        <p>{{ passage.passage_text | linebreaks }}</p>
         
         <form id="quiz" action="{% url 'quiz_result' %}" method="post">
             {% csrf_token %}

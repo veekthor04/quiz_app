@@ -9,7 +9,8 @@
 
 {% block header_section %}
 
-    <div>Time Left: --:-- <a href="{% url 'quiz_start' %}">Retake Quiz</a></div>
+    <div class="nav">Time Left: --:--</div>
+    <div class="nav" id="tag"><a href="{% url 'quiz_start' %}">Retake Quiz</a></div>
 
 {% endblock %}
 
