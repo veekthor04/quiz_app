@@ -26,6 +26,16 @@ function countdown( elementName, minutes, seconds ) {
 
 if (document.getElementById("quiz")){
     countdown( "time", time_minute, time_second );
+
+    document.querySelectorAll('.submit_quiz').forEach(item => {
+        item.addEventListener('click', event => {
+            var choice = confirm("Are you sure you want to submit the quiz!")
+            if (choice == true) {
+                document.getElementById('quiz').submit();
+            }
+        })
+      })
+
     document.addEventListener("mouseleave", function(event){
 
         if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight))
@@ -39,6 +49,8 @@ if (document.getElementById("quiz")){
     });
 
 }
+
+
 
 // var startTime = 0
 // var stopTime = 0

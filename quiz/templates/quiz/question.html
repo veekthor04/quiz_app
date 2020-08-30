@@ -10,7 +10,7 @@
 {% block header_section %}
 
     <div class="nav">Time Left: <span id="time">--:--</span></div>
-    <div class="nav" id="tag" ><a href="#" type="submit" onclick="document.getElementById('quiz').submit();">Submit</a></div>
+    <div class="nav" id="tag" ><a href="#" class="submit_quiz" type="submit" >Submit</a></div>
 
 {% endblock %}
 
@@ -45,9 +45,10 @@
             {% endfor %}
 
             <br>
-            <button>Submit Quiz</button>
 
         </form>
+
+        <button class="submit_quiz" >Submit Quiz</button>
 
     {% endfor %}
     
