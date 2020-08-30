@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+
+    Quiz Result
+
+{% endblock %}
+
+{% block header_section %}
+
+    <div>Time Left: --:-- <a href="{% url 'quiz_start' %}">Retake Quiz</a></div>
+
+{% endblock %}
+
+{% block main_section %}
+
+    <h3>Quiz Result</h3>
+    <p>Your score is {{ score }}%</p>
+    <p>The pass score is 75%. {% if score >= 75 %}Congratulations! you passed the test.{% else %}Sorry, you failed the test.{% endif %}</p>
+    <a href="{% url 'quiz_start' %}"><button>Retake Quiz</button></a>
+
+{% endblock %}

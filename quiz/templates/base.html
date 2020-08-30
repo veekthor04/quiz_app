@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width" />
+      <title>
+
+        {% block page_title %}
+        {% endblock %}
+      
+      </title>
+      <meta name="description" content="Quiz site."/>
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      
+      <script type="text/javascript">
+        var time_minute = {{ config.time_minute }}
+        var time_second = {{ config.time_second }}
+      </script>
+
+    </head>
+    <body>
+        <div class="main-content">
+          <header>
+            <h1>Multiple Choice Questions</h1>
+
+            {% block header_section %}
+            {% endblock %}
+
+          </header>
+
+          <!-- MAIN SECTION -->
+        {% block main_section %}
+        {% endblock %}
+
+      </div>
+      <footer>
+        <p>MCQs by Victor Adenuga</p>
+      </footer>
+
+      <script src="{% static 'js/base.js' %}"></script>
+
+    </body>

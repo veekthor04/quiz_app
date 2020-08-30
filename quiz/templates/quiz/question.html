@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+
+    Quiz
+
+{% endblock %}
+
+{% block header_section %}
+
+    <div>Time Left: <span id="time">--:--</span></div>
+    <a href="#" type="submit" onclick="document.getElementById('quiz').submit();">Submit</a>
+
+{% endblock %}
+
+{% block main_section %}
+
+    {% for passage in passages %}
+
+        <p>{{ passage.passage_text }}</p>
+        
+        <form id="quiz" action="{% url 'quiz_result' %}" method="post">
+            {% csrf_token %}
+            {% for question in questions %}
+
+                {% if question.passage == passage %}
+
+                    <p>{{ forloop.counter }}. {{ question.question }}</p>
+            
+                    <input type="radio" name="{{ question.id }}" id="{{ question.option1 }}" value="{{ question.option1 }}">
+                    <label for="{{ question.option1 }}">{{ question.option1 }}</label><br>
+                    
+                    <input type="radio" name="{{ question.id }}" id="{{ question.option2 }}" value="{{ question.option2 }}">
+                    <label for="{{ question.option2 }}">{{ question.option2 }}</label><br>
+                    
+                    <input type="radio" name="{{ question.id }}" id="{{ question.option3 }}" value="{{ question.option3 }}">
+                    <label for="{{ question.option3 }}">{{ question.option3 }}</label><br>
+                    
+                    <input type="radio" name="{{ question.id }}" id="{{ question.option4 }}" value="{{ question.option4 }}">
+                    <label for="{{ question.option4 }}">{{ question.option4 }}</label><br>
+      
+                {% endif %}
+
+            {% endfor %}
+
+            <br>
+            <button>Submit Quiz</button>
+
+        </form>
+
+    {% endfor %}
+    
+{% endblock %}
