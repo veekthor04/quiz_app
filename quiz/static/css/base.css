@@ -31,12 +31,12 @@ header {
   top: 0;
   background-color: rgb(255, 255, 255);
   width: 100%;
-  padding: 16px 0;
+  padding: 8px 0;
 }
 
 h1{
-  font-size: 30px;
-  margin-bottom: 16px;
+  font-size: 25px;
+  margin-bottom: 8px;
 }
 
 header a{
