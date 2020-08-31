@@ -10,9 +10,9 @@ FUNCTIONALITIES
 Admin:
 	/admin/ helps the quiz administrator to edit and add the passage, the question, the options and also adjust the timer by setting the time minute and time second via the site configuration model. https://veekmcqs.herokuapp.com/admin 
 
-    ![](media/admin1.PNG)
+![](media/admin1.PNG)
 
-    ![](media/admin2.PNG)
+![](media/admin2.PNG)
 
 
 Submission:
