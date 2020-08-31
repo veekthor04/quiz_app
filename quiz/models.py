@@ -4,9 +4,12 @@ from solo.models import SingletonModel
 
 # Create your models here.
 class SiteConfiguration(SingletonModel):
+    # model to allow the admin to set the constant site parameters
 
     time_minute = models.IntegerField(default=3)
     time_second = models.IntegerField(default=0)
+    retake_status = models.BooleanField(help_text="Tick to allow multiple attempts (for developmental use)", default=True)
+    attempt = models.IntegerField(default=1)
 
     def __str__(self):
         return "Site Configuration"
@@ -15,6 +18,7 @@ class SiteConfiguration(SingletonModel):
         verbose_name = "Site Configuration"
 
 class Passage(models.Model):
+    # model for passage to be displayed
 
     passage_text = models.TextField()
 
@@ -22,6 +26,7 @@ class Passage(models.Model):
         return truncatechars(self.passage_text, 100)
 
 class Question(models.Model):
+    # model for question and option to be provided
 
     passage = models.ForeignKey(Passage, on_delete=models.CASCADE)
     question = models.CharField( max_length=300)

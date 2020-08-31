@@ -8,7 +8,7 @@ TOOLS
 	Python (Django framework), Html and CSS, Vanilla JavaScript, Django-Solo
 FUNCTIONALITIES
 Admin:
-	/admin/ helps the quiz administrator to edit and add the passage, the question, the options and also adjust the timer by setting the time minute and time second via the site configuration model. https://veekmcqs.herokuapp.com/admin 
+	/admin/ helps the quiz administrator to edit and add the passage, the question, the options and also adjust the timer by setting the time minute and time second via the site configuration model. Also, the admin can allow or prevent multiple attempts. https://veekmcqs.herokuapp.com/admin  
 
 ![](media/admin1.PNG)
 
@@ -18,7 +18,9 @@ Admin:
 Submission:
 	Submission can either occur automatically when the time run out or manually by clicking the any of the two submit buttons available. Whenever the submit button is clicked it triggers a confirm function to make sure the user is ready to submit.
 Timer:
-	The timer is placed at the top of the screen to make it easy for the user to keep an eye on. 
+	The timer is placed at the top of the screen to make it easy for the user to keep an eye on.
+Retake and attempt:
+	For developmental of trial purpose, the retake status can be ticked. If the retake status is unticked the user will have limited attempts which will help to prevent multiple attempts. 
 LINKS
 Project Link: https://veekmcqs.herokuapp.com/
 GitHub Link: https://github.com/veekthor04/quiz_app

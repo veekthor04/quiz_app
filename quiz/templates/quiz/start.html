@@ -10,19 +10,53 @@
 {% block header_section %}
 
     <div class="nav">Time Left: --:--</div>
+
+    {% if config.retake_status == True and config.attempt > 0 %}
+
     <div class="nav" id="tag" ><a href="{% url 'quiz_question' %}">Start Quiz</a></div>
+    
+    {% endif %}
 
 {% endblock %}
 
 {% block main_section %}
 
-    <h3>Carefully read the instructions before you proceed</h3>
+    {% if config.retake_status == True or config.attempt > 0 %}
+
+        <h3>Carefully read the instructions before you proceed</h3>
+        <p>
+            Read the passage and select the most appropriate option. You have {{ config.time_minute }} 
+            minute(s) and {{ config.time_second }} second(s).
+        </p>
+        <p>Note:</p>
+        <p>
+            <ul>
+                <li>
+                    You have {% if config.retake_status == True %}unlimited {% else %} {{config.attempt}} {% endif %} attempt(s) left
+                </li>
+                <li>
+                    Do not refresh the page or go back to the previous page as it will be assumed to be an attempt
+                </li>
+                <li>
+                    The quiz is submitted automatically when time runs out.
+                </li>
+
+                <!-- <li>
+                    Do not move your mouse out of the window 
+                    as your test will be automatically submitted.
+                </li> -->
+
+            </ul>
+        </p>
+        
+        <a href="{% url 'quiz_question' %}"><button>Start Quiz</button></a>
+    
+    {% else %}
+
     <p>
-        Read the passage and select the most appropriate option. You have {{ config.time_minute }} 
-        minute(s) and {{ config.time_second }} second(s), the quiz is submitted automatically when time is up.. 
-        <!-- Note: Do not move your mouse out of the window 
-        as your test will be automatically submitted. -->
+        Sorry you do not have any attempt left!
     </p>
-    <a href="{% url 'quiz_question' %}"><button>Start Quiz</button></a>
+
+    {% endif %}
 
 {% endblock %}

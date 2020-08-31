@@ -36,38 +36,50 @@ if (document.getElementById("quiz")){
         })
       })
 
-    document.addEventListener("mouseleave", function(event){
+    // document.addEventListener("mouseleave", function(event){
 
-        if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight))
-        {
+    //     if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight))
+    //     {
       
-        //    alert("Do not leave the window")
+    //     //    alert("Do not leave the window")
            
-        //    document.getElementById("quiz").submit();
+    //     //    document.getElementById("quiz").submit();
+
+    //     console.log('left');
+
+    //     setTimeout(function(){ 
+            
+    //     if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight))
+    //     {
+    //             console.log('close');
+            
+    //         }
+    //     }, 3000);
+        
       
-        }
-    });
+    //     }
+    // });
 
 }
 
 
 
-// var startTime = 0
-// var stopTime = 0
-// var diffTime = 0
 // const mouseTarget = document.getElementById("wrapper");
 
 // mouseTarget.addEventListener('mouseleave', e => {
-//     startTime = new Date().getTime()
 //     console.log('left');
+//     setTimeout(function(){ 
+//         mouseTarget.addEventListener('mouseleave', e => {
+//             console.log('close');
+        
+//         });
+//      }, 3000);
 
 // });
 
 // mouseTarget.addEventListener('mouseenter', e => {
-//     stopTime = new Date().getTime()
+
 //     console.log('enter');
-//     diffTime = stopTime - startTime
-//     console.log(diffTime);
 
 // });
 
